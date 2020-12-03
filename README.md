@@ -5,4 +5,4 @@ A MLP to classify handwritten digits using the MNIST database. Included program 
 - To use the Number Guesser:
     - Feeds image forward when mouse button is lifted
     - Press any key to clear screen
-- Uses cupy; CUDA is required
+- By default, main.py loads non-GPU accelerated network, but CUDA acceleration is supported with NetworkCUDA.py and network-CUDA.npy
