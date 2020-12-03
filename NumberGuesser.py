@@ -8,11 +8,9 @@ from skimage.transform import resize
 import os
 
 rescale_factor = 60
-
 newSurface = pygame.Surface((500, 100))
 newSurface.fill((200, 200, 200))
 rect = pygame.Rect(0, 0, 500, 500)
-
 
 class NumberGuesser:
 
@@ -27,9 +25,6 @@ class NumberGuesser:
 		self.run()
 		
 	def update(self, events, font, sub):
-
-
-
 		for event in events:
 
 			if pygame.mouse.get_pressed()[0]:
@@ -40,7 +35,6 @@ class NumberGuesser:
 					pygame.display.update()
 				except AttributeError:
 					pass
-
 
 			if event.type == pygame.KEYDOWN:
 					
@@ -64,14 +58,14 @@ class NumberGuesser:
 				im = np.dot(im[...,:3], [1, 0.0, 0.0])
 				im = resize(im, (28, 28), anti_aliasing_sigma=4, clip = True)
 				im = im/127.5 - 1.0
-				im = cp.reshape(im, (1, 784))
-				im = cp.array(im)[0]
+				im = np.reshape(im, (1, 784))
+				im = np.array(im)[0]
 			
 				num = self.net.feedforward(im)
 
 				self.screen.blit(newSurface, (0, 500))
 
-				number_guessed = font.render('Guess: %d' % cp.argmax(num), True, (0, 0, 0))
+				number_guessed = font.render('Guess: %d' % np.argmax(num), True, (0, 0, 0))
 				confidence_guess = float(np.max(num)*100)
 				confidence = font.render(f'Confidence: {confidence_guess:.2f}%', True, (0, 0, 0))
 					
@@ -79,7 +73,6 @@ class NumberGuesser:
 				self.screen.blit(confidence, (20, 560))
 
 				pygame.display.update()
-
 
 	def run(self):
 
@@ -120,10 +113,3 @@ class NumberGuesser:
 			os.remove('num.png')
 		except FileNotFoundError:
 			pass
-
-		
-
-			
-
-
-
