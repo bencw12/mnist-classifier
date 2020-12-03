@@ -3,6 +3,7 @@ from Network import Network
 from NumberGuesser import NumberGuesser
 from mnist import MNIST
 import numpy as np
+#import cupy as cp
 
 
 mndata = MNIST('samples')
@@ -22,6 +23,8 @@ for x in labels:
 	train_label_vecs.append(vec)
 
 train_label_vecs = np.array(train_label_vecs)
+# CUDA
+# train_label_vecs = cp.array(train_label_vecs)
 # INITIALIZE THE NETWORK 
 #net = Network([784, 1000, 500, 10], train_images, train_label_vecs, test_images, test_labels)
 
