@@ -1,5 +1,5 @@
-from NetworkCUDA import Network
-#from Network import Network
+#from NetworkCUDA import Network
+from Network import Network
 from NumberGuesser import NumberGuesser
 from mnist import MNIST
 import numpy as np
@@ -29,9 +29,10 @@ train_label_vecs = np.array(train_label_vecs)
 #net.SGD(epochs = 30, mini_batch_size = 10, lr = 0.5, lmbda = 0.5)
 #net.save('network-new')
 
+trained_net = Network.load('network', train_images, train_label_vecs,	 test_images, test_labels)
 # FOR CUDA
-trained_net = Network.load('network-CUDA', train_images, train_label_vecs,	 test_images, test_labels)
-#trained_net = Network.load('network', train_images, train_label_vecs,	 test_images, test_labels)
+#trained_net = Network.load('network-CUDA', train_images, train_label_vecs,	 test_images, test_labels)
+
 
 
 # EVALUATE
