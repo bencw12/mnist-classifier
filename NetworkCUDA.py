@@ -38,6 +38,8 @@ class Layer:
 	#Feed forward one image through the layer
 	def forward(self, features):
 
+		features = cp.array(features)
+
 		self.z = cp.dot(self.weights, features) + self.biases
 		self.activation = sigmoid(self.z)
 
