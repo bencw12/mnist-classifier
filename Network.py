@@ -9,7 +9,7 @@ import json
 
 
 
-##### MNIST Classifier (CUDA - MUST HAVE CUPY INSTALLED) #####
+##### MNIST Classifier #####
 '''
 Multilayer Perceptron trained/evaluated with the MNIST database of handwritten digits.
 60000 training images are expanded using keras' ImageDataGenerator and the elastic_transform 
