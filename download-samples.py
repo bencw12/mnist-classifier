@@ -2,6 +2,8 @@ import os
 import urllib.request
 import gzip
 import shutil
+import sys
+import subprocess
 
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
 'python-mnist', 'keras', 'tensorflow==2.2', 'pygame', 'scikit-image', 'matplotlib'])
