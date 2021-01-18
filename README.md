@@ -6,3 +6,9 @@ A MLP to classify handwritten digits using the MNIST database. Included program 
     - Feeds image through network when left mouse is lifted
     - Press any key to clear screen
 - By default, main.py loads non-GPU accelerated network, but CUDA acceleration is supported with NetworkCUDA.py and network-CUDA.npy
+# Requirements
+- Python 3.5 or later
+# References
+- http://neuralnetworksanddeeplearning.com/chap2.html
+- https://arxiv.org/pdf/1003.0358.pdf
+- http://yann.lecun.com/exdb/mnist/
