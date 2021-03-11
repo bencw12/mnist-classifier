@@ -1,6 +1,6 @@
 import pygame
 import numpy as np
-import cupy as cp
+#import cupy as cp
 from PIL import Image
 from skimage import data
 import cv2
